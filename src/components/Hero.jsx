@@ -54,13 +54,12 @@ Transform your entertainment with the UK's most reliable IPTV service. Stream Pr
             >
               Get a package
             </a>
-            <button
+            <a
               className="w-64 sm:w-52 h-12 rounded-xl font-bold text-primaryText border border-solid  flex justify-center items-center cursor-pointer bg-bgDark2 hover:bg-bgDark3 border-primaryColor transition"
-              onClick={() => setIsModalOpen(true)}
-              aria-label="How to use"
+              href="/how-to-use"
             >
               How to use
-            </button>
+            </a>
           </div>
         </motion.div>
         <motion.div
