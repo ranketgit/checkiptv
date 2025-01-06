@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+
+---
+
+<Layout title="How to Use IPTV with CheckedIPTV uk | Installation Guide " description="Discover the ultimate guide to using CheckedIPTV in the UK. From easy setup steps for VLC Media Player and Smart TVs to expert tips for a seamless IPTV experience, we cover everything you need. Get started now!">
+    
+    <main class="bg-bgDark1 min-h-screen">
+      <!-- Hero Banner -->
+      <div class="relative overflow-hidden py-20 border-b border-primaryColor/10">
+        <div class="absolute inset-0 bg-gradient-to-r from-primaryColor/10 to-secondaryColor/10"></div>
+        <div class="container mx-auto px-4 relative">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-5xl font-bold text-primaryText mb-6 mt-20">How to Use IPTV</h1>
+            <p class="text-xl text-secondaryText">Complete setup guide for all your devices</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Content Container -->
+      <div class="container mx-auto px-4 py-16 max-w-4xl">
+        <!-- Introduction Card -->
+        <div class="mb-16">
+          <div class="bg-gradient-to-r from-primaryColor/5 to-secondaryColor/5 backdrop-blur-sm rounded-3xl p-10 border border-primaryColor/10">
+            <h2 class="text-3xl font-bold text-primaryText mb-6">Getting Started with IPTV</h2>
+            <p class="text-lg text-secondaryText leading-relaxed">
+              Setting up your IPTV service is a straightforward process that takes just a few minutes. Whether you're new to IPTV or experienced, our comprehensive guides and 24/7 support team will ensure you're streaming your favorite content in no time.
+            </p>
+          </div>
+        </div>
+  
+        <!-- VLC Setup Section -->
+        <section class="mb-16">
+          <div class="flex items-center space-x-4 mb-8">
+            <div class="h-10 w-10 rounded-full bg-primaryColor flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primaryText" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-primaryText">VLC Media Player Setup</h2>
+          </div>
+          
+          <div class="bg-bgDark1 rounded-3xl p-8 border border-primaryColor/10 hover:border-primaryColor/30 transition-all duration-300">
+            <div class="space-y-6">
+              <p class="text-secondaryText mb-6">Follow these simple steps to set up IPTV on VLC Media Player:</p>
+              <div class="grid gap-4">
+                {[
+                  {
+                    step: "1",
+                    title: "Download VLC",
+                    description: "Download VLC Media Player for your operating system (Windows, Linux, or macOS)",
+                    link: {
+                      text: "Download from official website",
+                      url: "https://www.videolan.org/vlc/"
+                    }
+                  },
+                  {
+                    step: "2",
+                    title: "Access Network Stream",
+                    description: "Open VLC and click on 'Media' then 'Open Network Stream' (or press Ctrl+N)"
+                  },
+                  {
+                    step: "3",
+                    title: "Enter M3U URL",
+                    description: "Paste your IPTV M3U URL in the network URL field and click 'Play'"
+                  },
+                  {
+                    step: "4",
+                    title: "Access Playlist",
+                    description: "Press Ctrl+L to view and search through your channel list"
+                  }
+                ].map(item => (
+                  <div class="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primaryColor/5 to-transparent border border-primaryColor/10">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primaryColor text-primaryText flex items-center justify-center font-bold">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-semibold text-primaryText mb-2">{item.title}</h3>
+                      <p class="text-secondaryText">{item.description}</p>
+                      {item.link && (
+                        <a href={item.link.url} class="inline-flex items-center text-primaryColor hover:text-secondaryColor mt-2">
+                          {item.link.text}
+                          <svg class="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Smart TV Setup Section -->
+        <section class="mb-16">
+          <div class="flex items-center space-x-4 mb-8">
+            <div class="h-10 w-10 rounded-full bg-primaryColor flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primaryText" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-primaryText">Smart TV Setup Guides</h2>
+          </div>
+  
+          <!-- GSE Smart IPTV -->
+          <div class="bg-bgDark1 rounded-3xl p-8 border border-primaryColor/10 hover:border-primaryColor/30 transition-all duration-300 mb-8">
+            <h3 class="text-2xl font-bold text-primaryText mb-6">GSE Smart IPTV Player</h3>
+            <div class="grid gap-4">
+              {[
+                "Download the GSE Smart IPTV application",
+                "Open the app and login to Remote Playlists from the top left menu",
+                "Touch the plus (+) button",
+                "Enter M3U add URL",
+                "Write iptvpacket in the Playlist name section",
+                "Copy and paste the m3u_plus link we sent you",
+                "Click ADD and save",
+                "Select your saved playlist named iptvpaketi"
+              ].map((step, index) => (
+                <div class="flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primaryColor/5 to-transparent border border-primaryColor/10">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primaryColor text-primaryText flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <p class="text-secondaryText">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          <!-- Other Smart TV Apps -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                name: "Smart IPTV",
+                steps: [
+                  "Run Smart IPTV on your TV",
+                  "Visit siptv.eu/mylist/",
+                  "Enter your TV's MAC Address",
+                  "Paste your M3u Plus link",
+                  "Complete verification",
+                  "Restart app to load channels"
+                ]
+              },
+              {
+                name: "SSiPTV",
+                steps: ["Available through support team"]
+              },
+              {
+                name: "Setiptv",
+                steps: ["Available through support team"]
+              },
+              {
+                name: "Netiptv",
+                steps: ["Available through support team"]
+              }
+            ].map(app => (
+              <div class="bg-bgDark1 rounded-2xl p-6 border border-primaryColor/10 hover:border-primaryColor/30 transition-all duration-300">
+                <h3 class="text-xl font-bold text-primaryText mb-4">{app.name}</h3>
+                <ul class="space-y-2">
+                  {app.steps.map(step => (
+                    <li class="text-secondaryText flex items-center space-x-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primaryColor"></span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+  
+        <!-- Guarantee Section -->
+        <section class="mb-16">
+          <div class="bg-gradient-to-r from-primaryColor to-secondaryColor rounded-3xl p-10 text-center">
+            <div class="max-w-2xl mx-auto">
+              <h2 class="text-3xl font-bold text-primaryText mb-4">7-Day Money-Back Guarantee</h2>
+              <p class="text-xl text-primaryText/90">Not satisfied? We'll refund your payment with no questions asked. Zero risk, zero hassle.</p>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Support Section -->
+        <section>
+          <div class="bg-gradient-to-r from-primaryColor/5 to-secondaryColor/5 rounded-3xl p-10 border border-primaryColor/10">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="text-3xl font-bold text-primaryText mb-4">Need Help?</h2>
+              <p class="text-secondaryText mb-8">Our support team is available 24/7 to help you with setup and troubleshooting</p>
+              <button class="bg-primaryColor hover:bg-secondaryColor text-primaryText px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primaryColor/20">
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+  </Layout>
+  

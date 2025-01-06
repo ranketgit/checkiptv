@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await Astro.glob('./posts/*.md');
+const url = Astro.url.pathname;
+---
+
+<Layout title="Blog - checkedIPTV uk | iptv provider in uk | Buy IPTV UK subscription " 
+        description="Discover expert IPTV guides, streaming technology updates, and industry insights from checkedIPTV. Your trusted source for UK streaming services, technical tutorials, and entertainment news." >
+    
+        <section class="relative min-h-[30vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-ranket-blue/15 to-transparent">
+          
+          
+            <!-- Content Container -->
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+              <!-- Main Heading -->
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 mt-20">
+                checkedIPTV blog 
+              </h1>
+          
+              <!-- Description -->
+              <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 mb-10 leading-relaxed">
+                Welcome to the checkedIPTV UK Blog! Here, we share everything you need to know about IPTV. You'll find easy guides on how to set it up, the latest updates, news, and how to request a free trial. Whether you're new or experienced with IPTV, our blog has something for everyone.
+              </p>
+            </div>
+            <div
+  class="absolute inset-0 h-full w-full bg-black bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+></div>
+          </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    {post.frontmatter.image && (
+                        <div class="h-48 w-full">
+                            <img 
+                                src={post.frontmatter.image} 
+                                alt={post.frontmatter.title}
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                    )}
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            {post.frontmatter.categories?.map((category) => (
+                                <span class="text-sm text-ranket-blue font-medium">{category}</span>
+                            ))}
+                        </div>
+                        <h2 class="text-xl font-semibold mb-3">
+                            <a href={`/blog/${post.frontmatter.slug}`} class="hover:text-ranket-blue transition-colors duration-300">
+                                {post.frontmatter.title}
+                            </a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">{post.frontmatter.excerpt}</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>{new Date(post.frontmatter.date).toLocaleDateString('fr-FR')}</span>
+                            <a href={`/blog/${post.frontmatter.slug}`} class="text-ranket-blue hover:underline">
+                                Lire la suite →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            ))}
+        </div>
+
+
+        
+    </section>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import "@fontsource/inter";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+import { Navbar } from '../components/Navbar.jsx'
+import { Footer } from '../components/Footer.jsx'
+
+export interface Props {
+  title: string;
+  description: string;
+}
+const site = "https://checkedtv.com";
+const url = Astro.url.pathname;
+let Curl;
+Curl = url === '/' ? Curl = site : Curl = site + url;
+const { title, description } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": Curl,
+  "name": title,
+  "description": description,
+  "inLanguage": "en-GB",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "HD IPTV UK",
+    "url": site
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HD IPTV UK",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${site}/logo.png`
+    }
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB",
+    "addressRegion": "United Kingdom"
+  }
+}
+
+
+---
+
+<!doctype html>
+<html lang="en" class="bg-bgDark2">
+  <head>
+    <link rel="canonical" href={Curl} hreflang="en-GB">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="title" content="IPTV UK - Best IPTV Provider" />
+    <meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="bg-bgDark2">
+    <main aria-label="Main content">
+      <Navbar client:load />
+      <slot />
+      <Footer  />
+    </main>
+    <style is:global>
+      html {
+        font-family: Inter;
+        background-color: #26272b;
+        overflow-x: hidden;
+        scroll-behavior: smooth !important;
+      }
+    </style>
+  </body>
+</html>
