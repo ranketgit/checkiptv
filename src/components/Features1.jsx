@@ -29,7 +29,11 @@ export const Features1 = () => {
               UK IPTV: Best Premium British Streaming Service | 24,000+ Live Channels & Sky Sports
 Experience Ultra-HD British TV without buffering! Watch Premier League, Sky channels, BBC, and international content instantly. Get the most reliable IPTV service in the United Kingdom with seamless streaming and catch-up TV. Start your entertainment upgrade today!
               </p>
-              <ul className="mb-6 text-primaryText">
+              
+            </div>
+          </div>
+          <div className="w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 sm:pr-8 lg:pt-10 justify-center lg:pl-4 xl:px-8">
+          <ul className="mb-6 text-primaryText">
                 <li className="mb-4 flex">
                   <CheckArrowIcon />
                   <span>Access to ALL UK/US sports</span>
@@ -51,45 +55,6 @@ Experience Ultra-HD British TV without buffering! Watch Premier League, Sky chan
                   <span>Content from 154 Countries Worldwide ! ( Asia,EU,Africa,AR...)</span>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className="w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 sm:pr-8 lg:pt-10 justify-center lg:pl-4 xl:px-8">
-            <div className="mb-8 lg:mb-0 w-full sm:w-1/2 px-2 lg:px-0">
-              <div className="mb-4 py-3 pl-3 pr-2 rounded">
-                <img
-                  src="feature1.webp"
-                  alt="Feature image 1"
-                  className="rounded-xl  main-border-gray mx-auto sm:mx-unset"
-                  aria-label="Feature image 1"
-                />
-              </div>
-              <div className="py-3 pl-3 pr-2 rounded ">
-                <img
-                  src="feature2.webp"
-                  alt="Feature image 2"
-                  className="rounded-xl  main-border-gray mx-auto sm:mx-unset"
-                  aria-label="Feature image 2"
-                />
-              </div>
-            </div>
-            <div className="w-1/2 lg:mt-20  pt-12 lg:pt-0 px-2 hidden sm:inline-block">
-              <div className="mb-4 py-3 pl-3 pr-2 rounded-lg ">
-                <img
-                  src="feature3.webp"
-                  alt="Feature image 3"
-                  className="rounded-xl  main-border-gray"
-                  aria-label="Feature image 3"
-                />
-              </div>
-              <div className="py-3 pl-3 pr-2 rounded-lg ">
-                <img
-                  src="feature4.webp"
-                  alt="Feature image 4"
-                  className="rounded-xl  main-border-gray"
-                  aria-label="Feature image 4"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </motion.div>
