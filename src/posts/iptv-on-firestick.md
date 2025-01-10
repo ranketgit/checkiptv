@@ -3,7 +3,7 @@ title: "How to Install IPTV on Fire Stick 2025: The right way to use it"
 slug: iptv-on-firestick
 date: 2025-01-10
 categories: ["iptv", "firestick"]
-image: "src/assets/images/iptv-on-firestick.webp"
+image: "/iptv-on-firestick.webp"
 excerpt: "The complete guide to setting up and optimizing IPTV on Firestick in 2025. Learn about top apps, troubleshooting tips, and premium streaming solutions from CheckedTV.com."
 ---
 ## Introduction to IPTV on Firestick
