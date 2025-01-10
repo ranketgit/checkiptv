@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { InvitationModal } from "./InvitationModal";
-import dashboard from "../assets/images/dashboard.jpg";
-
 export const Hero = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <section
       className="w-screen  flex justify-center items-center bg-bgDark1 mb-[28vw] md:mb-[18vw] lg:mb-[10vw] xl:mb-[13vw] 2xl:mb-60 hero-bg-gradient pb-24 sm:pb-32 md:pb-44 lg:pb-0"
@@ -92,9 +87,6 @@ Transform your entertainment with the UK's most reliable IPTV service. Stream Pr
           </div>
         </div>
       </div>
-      {isModalOpen && (
-        <InvitationModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
-      )}
     </section>
   );
 };

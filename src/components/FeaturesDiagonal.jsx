@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import { InvitationModal } from "./InvitationModal";
-import featuresdiagonal from "../assets/images/featuresdiagonal.jpg";
-
 export const FeaturesDiagonal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -68,9 +65,6 @@ export const FeaturesDiagonal = () => {
           ></path>
         </svg>
       </div>
-      {isModalOpen && (
-        <InvitationModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
-      )}
     </section>
   );
 };

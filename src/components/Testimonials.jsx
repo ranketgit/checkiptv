@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
 
-import { QuoteIcon } from "../assets/icons/QuoteIcon";
-import testimonial1 from "../assets/images/testimonial1.png";
-import testimonial2 from "../assets/images/testimonial2.png";
-import testimonial3 from "../assets/images/testimonial3.png";
-
 export const Testimonials = () => (
   <section className="w-full flex justify-center pt-16 mb-16 lg:mb-32 bg-bgDark2 relative">
     <div className="absolute -top-16" id="feedback" />
