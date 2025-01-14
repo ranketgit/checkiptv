@@ -1,0 +1,136 @@
+---
+// WhyChooseUs.astro
+const { region, city } = Astro.props;
+const location = city || region;
+---
+
+<section class="bg-white py-20">
+ <div class="max-w-6xl mx-auto px-4">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Why Choose HD IPTV in {location}?</h2>
+
+   <div class="grid gap-12">
+     <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-blue-600">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">Affordable Entertainment Options</h3>
+       <p class="text-gray-700 mb-6 leading-relaxed">Break free from expensive cable contracts and embrace the future of television entertainment in {location}. Our UK IPTV subscription services deliver outstanding value, offering comprehensive entertainment packages at competitive prices. Traditional satellite and cable services often require long-term commitments and costly equipment installations, while our IPTV solution provides immediate access to premium content without hidden charges.</p>
+       <p class="text-gray-700 mb-4">We understand every household has unique entertainment needs, which is why we offer flexible subscription in {location} options:</p>
+       <ul class="space-y-3 text-gray-700 list-disc pl-6">
+         <li>Quarterly subscriptions providing enhanced value</li>
+         <li>Annual packages offering maximum savings</li>
+         <li>Special bundle deals for multi-room setups</li>
+       </ul>
+     </div>
+
+     <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-blue-600">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">Extensive Channel Selection in {location}</h3>
+       <p class="text-gray-700 mb-6 leading-relaxed">Experience television without boundaries through our vast IPTV channel selection. Our service brings together an impressive array of content:</p>
+       <ul class="space-y-3 text-gray-700 list-disc pl-6">
+         <li>Over 15,000 live channels from across the globe</li>
+         <li>Complete UK entertainment package including BBC, ITV, and Channel 4</li>
+         <li>Premium sports coverage featuring Premier League, Champions League, and Formula 1</li>
+         <li>International news networks delivering round-the-clock coverage</li>
+         <li>Dedicated children's channels ensuring family-friendly entertainment</li>
+         <li>Speciality channels covering documentaries, lifestyle, and cultural content</li>
+       </ul>
+     </div>
+
+     <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-blue-600">
+       <h3 class="text-2xl font-bold text-gray-900 mb-4">High-Quality Streaming Experience</h3>
+       <p class="text-gray-700 mb-6 leading-relaxed">Immerse yourself in superior viewing quality with our advanced streaming infrastructure:</p>
+       <ul class="space-y-3 text-gray-700 list-disc pl-6">
+         <li>Full HD 1080p streaming as standard</li>
+         <li>4K Ultra HD content availability for compatible devices</li>
+         <li>Optimized servers ensuring minimal buffering</li>
+         <li>Smart bandwidth management for consistent performance</li>
+         <li>Multiple server locations guaranteeing 99.9% uptime</li>
+         <li>Advanced encoding for crystal-clear picture quality</li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</section>
+
+<section class="bg-gray-50 py-20">
+ <div class="max-w-6xl mx-auto px-4">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Top Features of Our IPTV Service - {location}</h2>
+
+   <div class="grid gap-12">
+     <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg>
+         Multi-Device Compatibility
+       </h3>
+       <p class="text-gray-700 mb-6">Access your entertainment anywhere, anytime with our versatile platform support:</p>
+       
+       <div class="grid md:grid-cols-3 gap-8">
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Smart TVs:</h4>
+           <ul class="space-y-2 text-gray-700">
+             <li>Samsung Smart TV</li>
+             <li>LG WebOS</li>
+             <li>Android TV</li>
+             <li>Sony Smart TV</li>
+           </ul>
+         </div>
+
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Mobile Devices:</h4>
+           <ul class="space-y-2 text-gray-700">
+             <li>iOS phones and tablets</li>
+             <li>Android smartphones and tablets</li>
+             <li>Custom mobile apps for enhanced viewing</li>
+           </ul>
+         </div>
+
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Streaming Devices:</h4>
+           <ul class="space-y-2 text-gray-700">
+             <li>Amazon Fire TV Stick</li>
+             <li>Android TV Box</li>
+             <li>Apple TV</li>
+             <li>Roku devices</li>
+             <li>MAG boxes</li>
+           </ul>
+         </div>
+       </div>
+     </div>
+
+     <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+         </svg>
+         On-Demand Content Library
+       </h3>
+       <p class="text-gray-700 mb-6">Never miss a moment with our extensive on-demand content collection:</p>
+       <ul class="space-y-3 text-gray-700 grid md:grid-cols-2 gap-x-8">
+         <li>Vast library of latest Hollywood blockbusters</li>
+         <li>Complete seasons of popular TV series</li>
+         <li>British television classics and current shows</li>
+         <li>Catch-up TV functionality for missed programs</li>
+         <li>Regular content updates ensuring fresh entertainment</li>
+         <li>Exclusive documentaries and special features</li>
+       </ul>
+     </div>
+
+     <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+         </svg>
+         Built-In VPN for Secure Streaming
+       </h3>
+       <p class="text-gray-700 mb-6">Your privacy and security matter. Our integrated VPN service provides:</p>
+       <ul class="space-y-3 text-gray-700 grid md:grid-cols-2 gap-x-8">
+         <li>Military-grade encryption protecting your streaming activity</li>
+         <li>Prevention of ISP throttling for smoother playback</li>
+         <li>Anonymous viewing experience</li>
+         <li>Protection on public Wi-Fi networks</li>
+         <li>Enhanced streaming performance</li>
+         <li>Zero-logs policy ensuring complete privacy</li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</section>

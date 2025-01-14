@@ -19,7 +19,7 @@ export const Features1 = () => {
             <div className="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-unset">
               <span className="block-subtitle">Chill and watch your favorite shows with checkediptv uk</span>
               <h2 className="mt-6 mb-8 text-4xl lg:text-5xl block-big-title">
-              CheckedTV IPTV UK No More Buffering, Just Peace Of Mind
+              CheckedTV CHECKEDTV IPTV No More Buffering, Just Peace Of Mind
               </h2>
               <p className="mb-10 text-secondaryText leading-loose">
               UK IPTV: Best Premium British Streaming Service | 24,000+ Live Channels & Sky Sports

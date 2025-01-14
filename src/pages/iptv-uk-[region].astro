@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ukRegions, slugify} from '../data/uk-regions';
+import Hero from '../components/region/Hero.astro';
+import WhyChooseUs from '../components/region/WhyChooseUs.astro';
+import GetStarted from '../components/region/GetStarted.astro';
+import Testimo from '../components/region/Testimo.astro';
+import {FAQ} from "../components/FAQ";
+import Pricing from '../components/region/Pricing.astro';
+
+export async function getStaticPaths() {
+  return Object.keys(ukRegions).map(region => ({
+    params: { region: slugify(region) },
+    props : { region: region},
+  }));
+}
+
+const { region } = Astro.props;
+const cities = ukRegions[region];
+const formattedRegion = region.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+---
+
+<Layout title={`CHECKEDIPTV in ${region} : Premium IPTV Subscription Service 2025 | Free Trial`} description={`CHECKEDCHECKEDTV IPTV in ${region} : The Best IPTV Subscription Service in the UK | our iptv coverage all over uk and especially ${region}`}>
+  <Hero region={region}/>
+  <div class="relative w-screen flex justify-center bg-transparent ">
+    <img
+      src='lastfeature.webp'
+      alt="Dashboard image"
+    />
+  </div>
+  <WhyChooseUs region={region} />
+  <Pricing location={region} />
+  <Testimo location={region} />
+  <GetStarted region={region} />
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-white text-center mb-6">Explore Cities in {formattedRegion}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {cities.map(city => (
+          <a href={`/iptv-uk-${region}/${slugify(city.toLowerCase())}`} class="block bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-red-50 transition-colors text-center">
+            {city}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <FAQ client:load/>
+
+<section class="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-20">
+ <div class="max-w-6xl mx-auto px-4">
+   <h2 class="text-3xl font-bold mb-12 text-center">Customer Support and Satisfaction</h2>
+
+   <div class="grid md:grid-cols-2 gap-12">
+     <!-- 24/7 Support Card -->
+     <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+       <h3 class="text-2xl font-bold mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+         </svg>
+         24/7 Customer Support
+       </h3>
+       <p class="mb-6">Count on our dedicated support team whenever you need assistance:</p>
+       <ul class="space-y-3 text-white/90">
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Live chat support available round-the-clock
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Email support with 2-hour response time
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Comprehensive knowledge base
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Video tutorials and setup guides
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Regular system status updates
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Dedicated technical support team
+         </li>
+       </ul>
+     </div>
+
+     <!-- Join Us Card -->
+     <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+       <h3 class="text-2xl font-bold mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+         </svg>
+         Join Us Today!
+       </h3>
+       <p class="mb-6">Experience the future of television entertainment with HD CHECKEDTV IPTV. Our premium IPTV service delivers unmatched value, quality, and variety. Subscribe now and enjoy:</p>
+       <ul class="space-y-3 text-white/90 mb-8">
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Free trial available
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           Instant activation
+         </li>
+         <li class="flex items-center">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg>
+           No hidden fees
+         </li>
+       </ul>
+       <p class="mb-6">Transform your viewing experience today. Visit hdiptv-uk.com to start your entertainment journey with the UK's most trusted IPTV provider.</p>
+       <a href="https://hdiptv-uk.com" class="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-red-50 transition-colors">
+         Start Free Trial
+       </a>
+     </div>
+   </div>
+ </div>
+</section>
+</Layout>

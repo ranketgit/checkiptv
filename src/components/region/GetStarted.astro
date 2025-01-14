@@ -1,0 +1,74 @@
+---
+// GetStarted.astro
+const { region, city } = Astro.props;
+const location = city || region;
+---
+
+<section class="bg-gray-50 py-20">
+ <div class="max-w-6xl mx-auto px-4">
+   <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">How to Get Started with Our IPTV Service</h2>
+
+   <div class="grid md:grid-cols-2 gap-8">
+     <!-- Subscription Process Card -->
+     <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+         </svg>
+         Easy Subscription Process
+       </h3>
+       <p class="text-gray-700 mb-6">Getting started with HD CHECKEDTV IPTV is straightforward:</p>
+       <ol class="space-y-4 text-gray-700 list-decimal pl-6">
+         <li>Visit our website at hdiptv-uk.com</li>
+         <li>Choose your preferred subscription plan</li>
+         <li>Complete the secure payment process</li>
+         <li>Receive instant access credentials</li>
+         <li>Start streaming within minutes</li>
+       </ol>
+     </div>
+
+     <!-- Installation Guide Card -->
+     <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+         </svg>
+         Installation Guide in {location}
+       </h3>
+       <p class="text-gray-700 mb-6">Setting up your IPTV subscription is quick and seamless across all supported devices. Our detailed setup instructions ensure you'll be streaming in minutes:</p>
+       
+       <div class="space-y-8">
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Smart TV Setup:</h4>
+           <ol class="space-y-2 text-gray-700 list-decimal pl-6">
+             <li>Download our dedicated app from your TV's app store</li>
+             <li>Launch the application and select 'New User'</li>
+             <li>Enter your subscription credentials</li>
+             <li>Start enjoying your favorite channels</li>
+           </ol>
+         </div>
+
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Fire Stick Installation:</h4>
+           <ol class="space-y-2 text-gray-700 list-decimal pl-6">
+             <li>Navigate to the Amazon App Store</li>
+             <li>Search for our recommended IPTV player</li>
+             <li>Install the application</li>
+             <li>Input your unique subscription details</li>
+           </ol>
+         </div>
+
+         <div>
+           <h4 class="font-semibold text-blue-600 mb-3">Common Troubleshooting Solutions:</h4>
+           <ul class="space-y-2 text-gray-700 list-disc pl-6">
+             <li>Refresh your internet connection if experiencing buffering</li>
+             <li>Clear app cache for improved performance</li>
+             <li>Update your IPTV player to the latest version</li>
+             <li>Check your VPN connection if activated</li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>

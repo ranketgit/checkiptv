@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const FAQData = [
   {
-    question: "What is IPTV UK ? And how does it work?",
-    answer: "IPTV UK or Internet Protocol Television, lets you watch live TV, movies, and series from popular streaming services over the internet. It works by setting up an app on your device, like a TV, Firestick, or Android box, giving you access to a wide range of content directly through your internet connection.",
+    question: "What is CHECKEDTV IPTV ? And how does it work?",
+    answer: "CHECKEDTV IPTV or Internet Protocol Television, lets you watch live TV, movies, and series from popular streaming services over the internet. It works by setting up an app on your device, like a TV, Firestick, or Android box, giving you access to a wide range of content directly through your internet connection.",
   },
   {
     question: "What types of channels are available with your service?",
@@ -34,7 +34,7 @@ const FAQData = [
 
 
 export const FAQ = () => (
-  <section className="relative -mt-8 sm:mt-0 pt-12 sm:pt-16 pb-16 bg-blueGray-50 overflow-hidden">
+  <section className="relative -mt-8 sm:mt-0 pt-12 sm:pt-16 pb-16  text-white overflow-hidden">
     <div className="absolute -top-10" id="FAQ" />
     <motion.div
       initial={{ opacity: 0 }}

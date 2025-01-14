@@ -23,8 +23,8 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.05 }}
         >
           <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide  text-primaryText  px-8 sm:px-8 md:px-20 lg:px-4">
-            <h2 className="inline md:hidden">CheckedTV IPTV UK</h2>
-            <h1 className="hidden md:inline">The Premier 🇬🇧 UK-Based Streaming Service - CheckedTV IPTV UK</h1>
+            <h2 className="inline md:hidden">CheckedTV CHECKEDTV IPTV</h2>
+            <h1 className="hidden md:inline">The Premier 🇬🇧 UK-Based Streaming Service - CheckedTV CHECKEDTV IPTV</h1>
           </div>
         </motion.div>
         <motion.div

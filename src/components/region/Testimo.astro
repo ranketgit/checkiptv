@@ -1,0 +1,23 @@
+---
+const {location} = Astro.props;
+---
+
+
+<section>
+    <div
+      class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24"
+    >
+      <div>
+        <p
+          class="text-4xl text-center mb-20 tracking-tight font-medium text-white md:text-5xl font-display"
+        >
+        Testimonials : Happy clients in {location}
+        </p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-5 xl:gap-10 px-6 xl:px-0 items-center justify-center">
+        <img src="/test/1.webp" class="w-[300px] h-[600px]"/>
+        <img src="/test/2.webp" class="w-[300px] h-[600px]"/>
+        <img src="/test/3.webp" class="w-[300px] h-[600px]"/>
+      </div>
+  </section>
+  

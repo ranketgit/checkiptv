@@ -1,0 +1,19 @@
+---
+// Hero.astro
+const { region, city } = Astro.props;
+const location = city || region;
+---
+
+<section class="bg-white py-20 bg-gradient-to-r from-red-50 to-white lg:pt-32">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight text-center">
+      CHECKEDTV IPTV in {location} : The Best IPTV Subscription Service in the UK
+    </h1>
+    
+    <div class=" p-8 rounded-xl">
+      <p class="text-md lg:text-lg text-gray-700 leading-relaxed text-center">
+        Transform your entertainment experience with HD CHECKEDTV IPTV, your trusted provider of premium streaming services in the United Kingdom in {location}. Discover a world of unlimited entertainment through our advanced IPTV service in {location}, delivering crystal-clear content directly to your preferred devices.
+      </p>
+    </div>
+  </div>
+</section>
