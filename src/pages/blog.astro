@@ -1,0 +1,95 @@
+---
+// pages/category/blog.astro
+import Layout from '../layouts/Layout.astro';
+
+const query = `
+  query GetPosts {
+    posts(first: 100) {
+      nodes {
+        title
+        slug
+        date
+        excerpt
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+`;
+
+const response = await fetch('https://blog.checkedtv.com/graphql', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ query }),
+});
+
+const { data } = await response.json();
+const posts = data.posts.nodes;
+---
+
+<Layout title="Blog - checkedIPTV uk | iptv provider in uk | Buy CHECKEDTV IPTV subscription" description="Discover expert IPTV guides, streaming technology updates, and industry insights from checkedIPTV. Your trusted source for UK streaming services, technical tutorials, and entertainment news.">
+  <div class="bg-gradient-to-br from-blue-900 via-[#222c5a] to-[#2130D3] min-h-screen py-48">
+    <!-- Header Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold text-white text-center mb-4">
+        Latest Blog Posts
+      </h1>
+      <p class="text-xl text-gray-300 text-center">
+        Stay updated with our latest news and tutorials
+      </p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a 
+            href={`/${post.slug}`} 
+            class="group"
+          >
+            <article class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div class="relative h-48 overflow-hidden">
+                {post.featuredImage?.node?.sourceUrl ? (
+                  <img 
+                    src={post.featuredImage.node.sourceUrl} 
+                    alt={post.title}
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-400">No Image</span>
+                  </div>
+                )}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  {post.title}
+                </h2>
+                <div class="text-gray-600 mb-4 line-clamp-3" set:html={post.excerpt} />
+                <div class="flex items-center justify-between">
+                  <time class="text-sm text-gray-500">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  <span class="text-blue-600 font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    Read More →
+                  </span>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

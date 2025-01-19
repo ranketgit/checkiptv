@@ -1,0 +1,114 @@
+---
+// pages/[slug].astro
+import Prose from '../components/Prose.astro';
+import Layout from '../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const query = `
+    query GetPosts {
+      posts(first: 100) {
+        nodes {
+          slug
+          title
+          content
+          date
+          excerpt
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await fetch('https://blog.checkedtv.com/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+  });
+
+  const { data } = await response.json();
+  
+  return data.posts.nodes.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+
+
+const { post } = Astro.props;
+const description = post.excerpt.replace('<p>', '').replace('</p>', '');
+---
+
+<Layout title={`${post.title} - Checked TV iptv`} description={`${description} - IPTV Legends`}>
+  <div class="min-h-screen bg-white">
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-50 border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="flex" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/" class="text-gray-500 hover:text-gray-700">Home</a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+                <a href="/category/blog" class="ml-4 text-gray-500 hover:text-gray-700">Blog</a>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="ml-4 text-gray-500" aria-current="page">{post.title}</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+          {post.title}
+        </h1>
+        <time class="text-gray-500">
+          {new Date(post.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+      </header>
+
+      {post.featuredImage?.node?.sourceUrl && (
+        <div class="mb-8">
+          <img 
+            src={post.featuredImage.node.sourceUrl} 
+            alt={post.title}
+            class="w-full h-auto rounded-xl shadow-lg"
+          />
+        </div>
+      )}
+
+        <div class="prose prose-xl max-w-none leading-relaxed" set:html={post.content} />
+    </article>
+  </div>
+</Layout>
+
+<style>
+  /* Add any additional styles here */
+  .prose img {
+    @apply mx-auto;
+  }
+</style>
