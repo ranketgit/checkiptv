@@ -6,7 +6,7 @@ import { never } from 'astro/zod';
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: "never",
+  trailingSlash: "always",
   site: "https://checkedtv.com",
   integrations: [react(), tailwind(), sitemap()],
 });
